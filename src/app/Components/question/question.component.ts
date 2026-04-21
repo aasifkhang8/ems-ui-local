@@ -24,7 +24,6 @@ import { MatTableModule } from '@angular/material/table';
 })
 
 export class QuestionComponent {
-  @Input() value: String = '';
   question: string = '';
   optionA: string = '';
   optionB: string = '';
@@ -53,7 +52,7 @@ export class QuestionComponent {
       filter['optionD'] = this.optionD;
       filter['optionE'] = this.optionE;
       filter['optionF'] = this.optionF;
-      filter['is_active'] = this.isActive ? this.isActive : AppConstants.ACTIVE;
+      filter['is_active'] = AppConstants.ACTIVE;
       filter['correctOption'] = this.correctOption;
       filter['optionTypeId'] = this.optionTypeId;
       filter['questionLevelId'] = this.questionLevelId;

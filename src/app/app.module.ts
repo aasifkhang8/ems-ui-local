@@ -19,9 +19,12 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
+import { ShowQuestionsComponent } from './Components/show-questions/show-questions.component';
 
 @NgModule({
   declarations: [
+  
+    
   ],
   imports: [
     BrowserModule,

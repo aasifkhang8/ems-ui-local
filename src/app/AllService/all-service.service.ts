@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AllServiceService {
-  
+
 constructor(private http: HttpClient) { }
 
   public url: string = 'http://localhost:8080/api';
@@ -19,8 +19,8 @@ saveQuestions(data: any) {
     });
   }
 
-  findAllTempQuestions(data: any) {
-    return fetch(this.url + `/tempQuestions/findAllTempQuestions`, {
+  findByTempQuestionsId(data: any) {
+    return fetch(this.url + `/tempQuestions/findByTempQuestionsId`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
