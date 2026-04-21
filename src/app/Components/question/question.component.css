@@ -1,0 +1,76 @@
+.form-wrapper {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+justify-content: left;
+padding: 2px;
+align-items: flex-start;
+}
+
+.card {
+    width: 98%;
+    margin: auto;
+    background: white;
+    padding: 8px;
+}
+
+.container {
+    margin-top: 6px;
+}
+
+h1{
+    text-align: center;
+}
+
+.text-center{
+    text-align: center;
+}
+
+/* .card button{
+    margin: 5px;
+} */
+
+/* mat-form-field{
+    flex: 1 1 40%;
+    min-width: 200px;
+    /* max-width: 377px; */
+/* } */ 
+
+a{
+    text-decoration: none;
+}
+
+.field{
+    flex: 1;
+    min-width: 20%;
+    max-width: 40%;
+}
+
+.mat-elevation-z8{
+    width: 94%;
+    margin-top: 6px;
+    box-shadow: 5px 5px 5px -3px rgba(0, 0, 0, 0.2);
+    justify-content: left;
+}
+
+.actionDecor{
+    display: inline-flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.scrollable-div {
+  width: 98%;          /* Fixed width */
+  height: auto;          /* Set a height to enable vertical scrolling */
+  overflow-x: scroll;       /* Enables horizontal scroll when content overflows */
+  /* overflow-y: hidden;     Prevents vertical scroll */
+  /* border: 1px solid #ccc;  Optional styling */
+  padding: 10px;
+}
+
+.scrollable-div table{
+    min-width: 2000px;
+    /* display: block; */
+}
+
+

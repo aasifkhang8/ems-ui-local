@@ -1,1 +1,77 @@
-<p>question works!</p>
+<div class="container">
+  <div class="card">
+    <form autocomplete="off">
+      <!-- <h1>product works!</h1> -->
+
+      <div class="form-wrapper">
+        <mat-form-field appearance="outline" class="field">
+          <mat-label>Question</mat-label>
+          <input matInput #input maxlength="255" placeholder="Enter Question" [(ngModel)]="question"
+            name="question" />
+          <!-- <mat-hint align="end">{{value.length}}/10</mat-hint> -->
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="field">
+          <mat-label>OptionA</mat-label>
+          <input matInput #input maxlength="255" placeholder="Enter Option A" [(ngModel)]="optionA" name="optionA" />
+          <!-- <mat-hint align="end">{{value.length}}/10</mat-hint> -->
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="field">
+          <mat-label>OptionB</mat-label>
+          <input matInput #input maxlength="255" placeholder="Enter Option B" [(ngModel)]="optionB" name="optionB" />
+          <!-- <mat-hint align="end">{{value.length}}/10</mat-hint> -->
+        </mat-form-field>
+
+                <mat-form-field appearance="outline" class="field">
+          <mat-label>OptionC</mat-label>
+          <input matInput #input maxlength="255" placeholder="Enter Option C" [(ngModel)]="optionC" name="optionC" />
+          <!-- <mat-hint align="end">{{value.length}}/10</mat-hint> -->
+        </mat-form-field>
+
+                <mat-form-field appearance="outline" class="field">
+          <mat-label>OptionD</mat-label>
+          <input matInput #input maxlength="255" placeholder="Enter Option D" [(ngModel)]="optionD" name="optionD" />
+          <!-- <mat-hint align="end">{{value.length}}/10</mat-hint> -->
+        </mat-form-field>
+
+                <mat-form-field appearance="outline" class="field">
+          <mat-label>OptionE</mat-label>
+          <input matInput #input maxlength="255" placeholder="Enter Option E" [(ngModel)]="optionE" name="optionE" />
+          <!-- <mat-hint align="end">{{value.length}}/10</mat-hint> -->
+        </mat-form-field>
+
+                <mat-form-field appearance="outline" class="field">
+          <mat-label>OptionF</mat-label>
+          <input matInput #input maxlength="255" placeholder="Enter Option F" [(ngModel)]="optionF" name="optionF" />
+          <!-- <mat-hint align="end">{{value.length}}/10</mat-hint> -->
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="field">
+          <mat-label>correctOption</mat-label>
+          <input matInput #input maxlength="255" placeholder="Enter correctOption" [(ngModel)]="correctOption" name="correctOption" />
+          <!-- <mat-hint align="end">{{value.length}}/10</mat-hint> -->
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="field">
+          <mat-label>optionTypeId</mat-label>
+          <input matInput #input maxlength="255" placeholder="Enter optionTypeId" [(ngModel)]="optionTypeId" name="optionTypeId" />
+          <!-- <mat-hint align="end">{{value.length}}/10</mat-hint> -->
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="field">
+          <mat-label>questionLevelId</mat-label>
+          <input matInput #input maxlength="255" placeholder="Enter questionLevelId" [(ngModel)]="questionLevelId" name="questionLevelId" />
+          <!-- <mat-hint align="end">{{value.length}}/10</mat-hint> -->
+        </mat-form-field>
+
+      </div>
+
+      <button mat-raised-button color="primary" type="submit" style="text-align: left;"
+        (click)="saveQuestion()">Save</button>
+      <button mat-raised-button color="basic" type="submit" style="text-align: left; margin-left: 5px;"
+        (click)="clearButton()">Clear</button>
+    </form>
+  </div>
+
+</div>
