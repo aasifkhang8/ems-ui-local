@@ -3,9 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { QuestionComponent } from './Components/question/question.component';
 import { ShowQuestionsComponent } from './Components/show-questions/show-questions.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path:'',
+    component:QuestionComponent,
+  },
+  {
+    path:'test',
     component:QuestionComponent,
     pathMatch:"full"
   },

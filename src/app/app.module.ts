@@ -42,6 +42,7 @@ import { ShowQuestionsComponent } from './Components/show-questions/show-questio
     MatProgressSpinnerModule,
     ReactiveFormsModule,
     MatTableModule,
+    AppRoutingModule
   ],
   providers: [MatSnackBar],
   bootstrap: []

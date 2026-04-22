@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { QuestionComponent } from './Components/question/question.component';
 import { ShowQuestionsComponent } from './Components/show-questions/show-questions.component';
+import { RouterOutlet } from '@angular/router';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { ShowQuestionsComponent } from './Components/show-questions/show-questio
   styleUrl: './app.component.css',
   standalone:true,
     imports: [MatToolbarModule, QuestionComponent
-      ,ShowQuestionsComponent],
+      ,ShowQuestionsComponent,RouterOutlet ],
 })
 export class AppComponent {
   title = 'ems-ui-local';
