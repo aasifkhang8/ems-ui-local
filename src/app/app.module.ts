@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 import { QuestionComponent } from './Components/question/question.component';
 
@@ -42,7 +43,8 @@ import { ShowQuestionsComponent } from './Components/show-questions/show-questio
     MatProgressSpinnerModule,
     ReactiveFormsModule,
     MatTableModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule
   ],
   providers: [MatSnackBar],
   bootstrap: []

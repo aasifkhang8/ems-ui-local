@@ -1,3 +1,4 @@
+declare var MathJax: any;
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { AllServiceService } from '../../AllService/all-service.service';
 import { SharedService } from '../../Services/Shared/shared.service';
@@ -11,17 +12,20 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-show-questions',
   templateUrl: './show-questions.component.html',
   styleUrl: './show-questions.component.css',
   standalone:true,
-  imports:[MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule,MatToolbarModule,MatMenuModule,
-      MatIconModule,MatSelectModule,FormsModule,MatProgressSpinnerModule,MatTableModule]
+  imports: [MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule, MatToolbarModule, MatMenuModule,
+    MatIconModule, MatSelectModule, FormsModule, MatProgressSpinnerModule, MatTableModule,CommonModule]
 })
 export class ShowQuestionsComponent {
   
+    id: string = '';
     question: string = '';
     optionA: string = '';
     optionB: string = '';
@@ -37,10 +41,15 @@ export class ShowQuestionsComponent {
     updatedBy: string = '';
 
     questionsList: any;
+
+    MathJax: any;
+
   
     constructor(private service: AllServiceService, private sharedService:SharedService,
       private cdr: ChangeDetectorRef
-    ) {}
+    ) {
+
+    }
 
     ngOnInit(){
       this.findByTempQuestionsId();
@@ -48,13 +57,47 @@ export class ShowQuestionsComponent {
 
     findByTempQuestionsId(){
     let filter: any = {};
-    filter['id'] = '1';
+    filter['id'] = '5';
     this.service.findByTempQuestionsId(filter)
       .then(res => res.json())
       .then(json => {
-        this.questionsList = json.data;
+        // this.questionsList = JSON.stringify(json.data[0]);
+         this.questionsList =  json.data[0];
+         
+         this.optionA=`\\(${this.questionsList.option_a}\\)`;
         console.log(this.questionsList);
+        // setTimeout(() => this.MathJax.typeset(), 0);
         // this.cdr.markForCheck();
       });
+
+       
     }
+
+    ngAfterViewInit(){
+    if (window && (window as any).MathJax) {
+    (window as any).MathJax.typesetPromise();
+} else {
+    console.warn('MathJax not yet loaded from CDN');
+}
+
+// async renderMath() {
+//   const mj = (window as any).MathJax;
+  
+//   if (mj && mj.startup) {
+//     // Wait for the library to be ready before calling methods
+//     await mj.startup.promise;
+//     await mj.typesetPromise();
+//   }
+// }
+
+if (typeof this.MathJax !== 'undefined') {
+      this.MathJax.typeset();
+    } else {
+      console.log(this.MathJax);
+      console.error('MathJax not loaded');
+    }
+  }
+
+
+
 }

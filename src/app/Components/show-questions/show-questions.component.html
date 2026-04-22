@@ -1,1 +1,46 @@
-<p>show-questions works!</p>
+<p>show-questions works! {{questionsList}}</p>
+<p>show-questions works! {{optionA}}</p>
+
+<div>
+  <p>{{questionsList.question}}</p>
+ <label>
+  <input type="radio" name="q1" [value]="optionA">{{optionA}}
+</label><br>
+  <label>
+    <input type="radio" name="q1" [value]="'{questionsList.option_b}'"> {{questionsList.option_b}}
+  </label><br>
+  <label>
+    <input type="radio" name="q1" [value]="'{questionsList.option_c}'"> {{questionsList.option_c}}
+  </label><br>
+  <label>
+    <input type="radio" name="q1" [value]="'{questionsList.option_d}'"> {{questionsList.option_d}}
+  </label><br>
+  <label>
+    <input type="radio" name="q1" [value]="'{questionsList.option_e}'"> {{questionsList.option_e}}
+  </label><br>
+  <label>
+    <input type="radio" name="q1" [value]="'{questionsList.option_f}'"> {{questionsList.option_f}}
+  </label>
+</div>
+
+<div>
+  <p>{{questionsList.question}}</p>
+ <label>
+  <input type="checkbox" name="q2" [value]="optionA"> {{ optionA }}
+</label><br>
+  <label>
+    <input type="checkbox" name="q2" [value]="'{questionsList.option_b}'"> {{questionsList.option_b}}
+  </label><br>
+  <label>
+    <input type="checkbox" name="q2" [value]="'{questionsList.option_c}'"> {{questionsList.option_c}}
+  </label><br>
+  <label>
+    <input type="checkbox" name="q2" [value]="'{questionsList.option_d}'"> {{questionsList.option_d}}
+  </label><br>
+  <label>
+    <input type="checkbox" name="q2" [value]="'{questionsList.option_e}'"> {{questionsList.option_e}}
+  </label><br>
+  <label>
+    <input type="checkbox" name="q2" [value]="'{questionsList.option_f}'"> {{questionsList.option_f}}
+  </label>
+</div>

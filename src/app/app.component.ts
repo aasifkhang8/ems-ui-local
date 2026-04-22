@@ -4,6 +4,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { QuestionComponent } from './Components/question/question.component';
 import { ShowQuestionsComponent } from './Components/show-questions/show-questions.component';
 import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css',
   standalone:true,
     imports: [MatToolbarModule, QuestionComponent
-      ,ShowQuestionsComponent,RouterOutlet ],
+      ,ShowQuestionsComponent,RouterOutlet ,CommonModule],
 })
 export class AppComponent {
   title = 'ems-ui-local';
