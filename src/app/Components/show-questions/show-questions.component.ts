@@ -57,7 +57,7 @@ export class ShowQuestionsComponent {
 
     findByTempQuestionsId(){
     let filter: any = {};
-    filter['id'] = '5';
+    filter['id'] = '1';
     this.service.findByTempQuestionsId(filter)
       .then(res => res.json())
       .then(json => {
