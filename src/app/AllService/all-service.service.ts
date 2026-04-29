@@ -26,4 +26,13 @@ saveQuestions(data: any) {
       body: JSON.stringify(data)
     });
   }
+
+  
+  findQuestions(data: any) {
+    return fetch(this.url + `/question/getQuestions`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+  }
 }

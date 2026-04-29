@@ -45,6 +45,10 @@ export class ShowQuestionsComponent {
     MathJax: any;
 
     
+// Timer variables
+  timeLeft: number = 3600; // 1 hour in seconds
+  displayTime: string = '01:00:00';
+    
     data = {
     a: { items: [{ id: 1, name: 'alpha' }, { id: 2, name: 'beta' }
       ,{id: 3, name: 'gamma' }, { id: 4, name: 'delta' },{ id: 5, name: 'epsilon' }, { id: 6, name: 'zeta' }
@@ -63,7 +67,9 @@ export class ShowQuestionsComponent {
     }
 
     ngOnInit(){
-      this.findByTempQuestionsId();
+      // this.findByTempQuestionsId();
+      this.findQuestions();
+          this.startTimer();
     }
 
     findByTempQuestionsId(){
@@ -101,18 +107,52 @@ export class ShowQuestionsComponent {
 //   }
 // }
 
-if (typeof this.MathJax !== 'undefined') {
-      this.MathJax.typeset();
-    } else {
-      console.log(this.MathJax);
-      console.error('MathJax not loaded');
-    }
+//this one is working
+// if (typeof this.MathJax !== 'undefined') {
+//       this.MathJax.typeset();
+//     } else {
+//       console.log(this.MathJax);
+//       console.error('MathJax not loaded');
+//     }
   }
-
 
   selectItem(item: any) {
     this.selectedItem = item;
   }
+
+  startTimer() {
+    setInterval(() => {
+      if (this.timeLeft > 0) {
+        this.timeLeft--;
+        this.displayTime = this.formatTime(this.timeLeft);
+      }
+    }, 1000);
+  }
+
+  formatTime(seconds: number): string {
+    const h = Math.floor(seconds / 3600);
+    const m = Math.floor((seconds % 3600) / 60);
+    const s = seconds % 60;
+    return `${this.pad(h)}:${this.pad(m)}:${this.pad(s)}`;
+  }
+
+  pad(num: number): string {
+    return num < 10 ? '0' + num : num.toString();
+  }
+
+  
+    findQuestions(){
+    let filter: any = {};
+    filter['id'] = '1';
+    this.service.findQuestions(filter)
+      .then(res => res.json())
+      .then(json => {
+         this.data =  json;
+         console.log(json)
+      });
+
+       
+    }
 
 
 
