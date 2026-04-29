@@ -1,35 +1,54 @@
-<div class="container">
-    <!-- Timer above both panels -->
-  <div class="timer">
-    ⏱ Time Left: {{ displayTime }}
-  </div>
+<mat-toolbar color="primary" class="toolbar" style="text-align: center;">
+  ⏱ Time Left: {{ displayTime }}
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
   <!-- Left Panel -->
-  <div class="left-panel">
-    <div *ngFor="let key of (data | keyvalue)">
-      <button class="accordion" (click)="key.expanded = !key.expanded">
-        {{ key.key | uppercase }}
-      </button>
-      <div class="panel" *ngIf="key.expanded">
+  <mat-sidenav mode="side" opened class="sidenav">
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let key of (data | keyvalue)">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ key.key | uppercase }}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
         <div class="circle-options">
-          <div 
-            class="circle" 
-            *ngFor="let item of key.value" 
-            (click)="selectItem(item)"
-            [class.selected]="selectedItem?.id === item.id">
+          <button mat-raised-button
+                  color="{{ selectedItem?.id === item.id ? 'accent' : '' }}"
+                  class="circle"
+                  *ngFor="let item of key.value"
+                  (click)="selectItem(item)">
             {{ item.id }}
-          </div>
+          </button>
         </div>
-      </div>
-    </div>
-  </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-sidenav>
 
   <!-- Right Panel -->
-  <div class="right-panel" *ngIf="selectedItem">
-    <h3>Selected Item</h3>
-    <p><strong>ID:</strong> {{ selectedItem.optionA }}</p>
-    <p><strong>Name:</strong> {{ selectedItem.optionB }}</p>
-  </div>
-</div>
+  <mat-sidenav-content class="content">
+    <ng-container *ngIf="selectedItem; else noSelection">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Selected Item</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p><strong>ID:</strong> {{ selectedItem.id }}</p>
+          <p><strong>Name:</strong> {{ selectedItem.optionA }}</p>
+        </mat-card-content>
+      </mat-card>
+    </ng-container>
+
+    <ng-template #noSelection>
+      <mat-card>
+        <mat-card-content>
+          <p>Please select an item from the left panel.</p>
+        </mat-card-content>
+      </mat-card>
+    </ng-template>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 
 <!-- 
 <p>show-questions works! {{questionsList}}</p>

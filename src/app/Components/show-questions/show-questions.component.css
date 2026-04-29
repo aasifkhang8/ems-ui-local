@@ -1,65 +1,31 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+.sidenav-container {
+  height: calc(100vh - 64px); /* subtract toolbar height */
 }
 
-.timer {
-  text-align: center;
-  font-size: 20px;
-  font-weight: bold;
-  margin: 10px 0;
-}
-
-.left-panel {
-  width: 30%;
-  border-right: 1px solid #ccc;
+.sidenav {
+  width: 200px;
   padding: 10px;
 }
 
-.right-panel {
-  flex: 1;
+.content {
   padding: 20px;
-}
-
-.accordion {
-  background-color: #eee;
-  cursor: pointer;
-  padding: 10px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 16px;
-  margin-bottom: 5px;
 }
 
 .circle-options {
   display: flex;
-  flex-wrap: wrap;       /* wrap to next line */
-  gap: 15px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .circle {
-  width: 10px;
-  height: 30px;
   border-radius: 50%;
-  background-color: #ddd;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  min-width: 50px; /* ensures button stays circular */
+  padding: 0;
   font-weight: bold;
-  transition: 0.3s;
-  flex: 0 0 calc(20% - 15px); /* 5 per row */
 }
 
-.circle:hover {
-  background-color: #4caf50;
-  color: white;
-}
-
-.circle.selected {
-  background-color: #4caf50;
-  color: white;
+.center{
+    text-align: center;
 }

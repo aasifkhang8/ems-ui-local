@@ -14,6 +14,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CommonModule } from '@angular/common';
+import { MatSidenavModule }  from '@angular/material/sidenav';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @Component({
   selector: 'app-show-questions',
@@ -21,7 +23,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './show-questions.component.css',
   standalone:true,
   imports: [MatFormFieldModule, MatInputModule, FormsModule, MatButtonModule, MatToolbarModule, MatMenuModule,
-    MatIconModule, MatSelectModule, FormsModule, MatProgressSpinnerModule, MatTableModule,CommonModule]
+    MatIconModule, MatSelectModule, FormsModule, MatProgressSpinnerModule, MatTableModule,CommonModule,MatSidenavModule,MatExpansionModule]
 })
 export class ShowQuestionsComponent {
   
@@ -120,7 +122,7 @@ export class ShowQuestionsComponent {
     this.selectedItem = item;
   }
 
-  startTimer() {
+    startTimer() {
     setInterval(() => {
       if (this.timeLeft > 0) {
         this.timeLeft--;
@@ -139,7 +141,6 @@ export class ShowQuestionsComponent {
   pad(num: number): string {
     return num < 10 ? '0' + num : num.toString();
   }
-
   
     findQuestions(){
     let filter: any = {};
