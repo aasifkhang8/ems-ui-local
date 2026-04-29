@@ -1,3 +1,33 @@
+<div class="container">
+  <!-- Left Panel -->
+  <div class="left-panel">
+    <div *ngFor="let key of (data | keyvalue)">
+      <button class="accordion" (click)="key.expanded = !key.expanded">
+        {{ key.key | uppercase }}
+      </button>
+      <div class="panel" *ngIf="key.expanded">
+        <div class="circle-options">
+          <div 
+            class="circle" 
+            *ngFor="let item of key.value.items" 
+            (click)="selectItem(item)"
+            [class.selected]="selectedItem?.id === item.id">
+            {{ item.id }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Panel -->
+  <div class="right-panel" *ngIf="selectedItem">
+    <h3>Selected Item</h3>
+    <p><strong>ID:</strong> {{ selectedItem.id }}</p>
+    <p><strong>Name:</strong> {{ selectedItem.name }}</p>
+  </div>
+</div>
+
+<!-- 
 <p>show-questions works! {{questionsList}}</p>
 <p>show-questions works! {{optionA}}</p>
 
@@ -43,4 +73,4 @@
   <label>
     <input type="checkbox" name="q2" [value]="'{questionsList.option_f}'"> {{questionsList.option_f}}
   </label>
-</div>
+</div> -->

@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.left-panel {
+  width: 30%;
+  border-right: 1px solid #ccc;
+  padding: 10px;
+}
+
+.right-panel {
+  flex: 1;
+  padding: 20px;
+}
+
+.accordion {
+  background-color: #eee;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.circle-options {
+  display: flex;
+  flex-wrap: wrap;       /* wrap to next line */
+  gap: 15px;
+}
+
+.circle {
+  width: 10px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  flex: 0 0 calc(20% - 15px); /* 5 per row */
+}
+
+.circle:hover {
+  background-color: #4caf50;
+  color: white;
+}
+
+.circle.selected {
+  background-color: #4caf50;
+  color: white;
+}

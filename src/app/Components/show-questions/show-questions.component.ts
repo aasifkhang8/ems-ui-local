@@ -44,6 +44,17 @@ export class ShowQuestionsComponent {
 
     MathJax: any;
 
+    
+    data = {
+    a: { items: [{ id: 1, name: 'alpha' }, { id: 2, name: 'beta' }
+      ,{id: 3, name: 'gamma' }, { id: 4, name: 'delta' },{ id: 5, name: 'epsilon' }, { id: 6, name: 'zeta' }
+    ] },
+    b: { items: [{ id: 3, name: 'gamma' }, { id: 4, name: 'delta' }] },
+    c: { items: [{ id: 5, name: 'epsilon' }, { id: 6, name: 'zeta' }] }
+  };
+
+  selectedItem: any = null;
+
   
     constructor(private service: AllServiceService, private sharedService:SharedService,
       private cdr: ChangeDetectorRef
@@ -96,6 +107,11 @@ if (typeof this.MathJax !== 'undefined') {
       console.log(this.MathJax);
       console.error('MathJax not loaded');
     }
+  }
+
+
+  selectItem(item: any) {
+    this.selectedItem = item;
   }
 
 

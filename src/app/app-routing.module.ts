@@ -10,7 +10,7 @@ export const routes: Routes = [
   },
   {
     path:'test',
-    component:QuestionComponent,
+    component:ShowQuestionsComponent,
     pathMatch:"full"
   },
   {
