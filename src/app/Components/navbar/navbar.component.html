@@ -1,0 +1,109 @@
+<mat-toolbar color="primary" class="toolbar">
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <a href="/test">
+            <button mat-menu-item>
+                <mat-icon>home</mat-icon>
+                <span>Dashboard</span>
+            </button>
+        </a>
+         <a href="/test">
+            <button mat-menu-item>
+                <mat-icon>trending_down</mat-icon>
+                <span>Expense</span>
+            </button></a>
+        <a href="/test">
+            <button mat-menu-item>
+                <mat-icon>trending_up</mat-icon>
+                <span>Daily Production</span>
+            </button></a>
+        <a href="/test">
+            <button mat-menu-item>
+                <mat-icon>swap_vert</mat-icon>
+                <span>Purchase-Sale</span>
+            </button></a>
+        <a href="/test">
+            <button mat-menu-item>
+                <mat-icon>attach_money</mat-icon>
+                <span>Payment</span>
+            </button></a>
+        <a href="/test">
+            <button mat-menu-item>
+                <mat-icon>attach_money</mat-icon>
+                <span>Balance</span>
+            </button></a>
+
+        <a href="/test">
+            <button mat-menu-item>
+                <mat-icon>calculate</mat-icon>
+                <span>Calculator</span>
+            </button></a>
+    </mat-menu>
+
+    <button mat-icon-button [matMenuTriggerFor]="addMenu" aria-label="Menu">
+        <mat-icon>add_circle</mat-icon>
+    </button>
+    <mat-menu #addMenu="matMenu">
+         <a href="/test">
+            <button mat-menu-item>
+                <mat-icon>home</mat-icon>
+                <span>Home</span>
+            </button>
+        </a> 
+        <a href="/test">
+            <button mat-menu-item>
+                <mat-icon>add_circle_outline</mat-icon>
+                <span>Employee</span>
+            </button></a>
+        <a href="/test">
+            <button mat-menu-item>
+                <mat-icon>add_circle_outline</mat-icon>
+                <span>Raw Material</span>
+            </button></a>
+        <a href="/test">
+            <button mat-menu-item>
+                <mat-icon>add_circle_outline</mat-icon>
+                <span>Product</span>
+            </button></a>
+
+        <a href="/test">
+            <button mat-menu-item>
+                <mat-icon>add_circle_outline</mat-icon>
+                <span>Client</span>
+            </button></a>
+        <a href="/test">
+            <button mat-menu-item>
+                <mat-icon>add_circle_outline</mat-icon>
+                <span>Vendor</span>
+            </button></a>
+
+    </mat-menu>
+<!-- 
+     <a href="/"><span style="margin-right: 20px;">My App</span></a>
+    <span class="example-spacer"></span>  -->
+
+
+    <!-- <mat-form-field appearance="fill" class="field" style="margin-top: 22px;">
+        <mat-label>Verticle</mat-label>
+        <mat-select [(value)]="vertical" (selectionChange)="sendData()">
+            <mat-option *ngFor="let item of verticalList" [value]="item">
+                {{ item.name }}
+            </mat-option>
+        </mat-select>
+
+    </mat-form-field>
+
+    <span class="spacer"></span>
+    <button mat-icon-button [matMenuTriggerFor]="logOut" aria-label="Menu">
+        <mat-icon>person</mat-icon>
+    </button>
+    <mat-menu #logOut="matMenu">
+        <button mat-menu-item (click)="logout()">
+            <mat-icon>lock</mat-icon>
+            <span>Log Out</span>
+        </button>-->
+    <!-- </mat-menu>  -->
+
+</mat-toolbar>
