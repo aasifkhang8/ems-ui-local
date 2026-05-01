@@ -5,6 +5,7 @@ import { QuestionComponent } from './Components/question/question.component';
 import { ShowQuestionsComponent } from './Components/show-questions/show-questions.component';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { NavbarComponent } from './Components/navbar/navbar.component';
 
 
 @Component({
@@ -13,8 +14,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.css',
   standalone:true,
     imports: [MatToolbarModule, QuestionComponent
-      ,ShowQuestionsComponent,RouterOutlet ,CommonModule],
+      ,ShowQuestionsComponent,RouterOutlet ,CommonModule,NavbarComponent],
 })
 export class AppComponent {
   title = 'ems-ui-local';
+    isNavBarVisible: boolean = false;
 }

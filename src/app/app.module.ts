@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { CommonModule } from '@angular/common';
 
 import { QuestionComponent } from './Components/question/question.component';
 
@@ -21,10 +20,11 @@ import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 import { ShowQuestionsComponent } from './Components/show-questions/show-questions.component';
+import { NavbarComponent } from './Components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
-  
+
     
   ],
   imports: [
@@ -43,8 +43,7 @@ import { ShowQuestionsComponent } from './Components/show-questions/show-questio
     MatProgressSpinnerModule,
     ReactiveFormsModule,
     MatTableModule,
-    AppRoutingModule,
-    CommonModule
+    AppRoutingModule
   ],
   providers: [MatSnackBar],
   bootstrap: []
